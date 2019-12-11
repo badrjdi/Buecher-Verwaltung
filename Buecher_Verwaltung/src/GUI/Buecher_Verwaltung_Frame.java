@@ -31,16 +31,16 @@ import Model.Buch;
 import Model.Buecher;
 import Model.BuecherDAO;
 
-//igor.grossklaus@student.jade-hs.de
+
 /**
- * Anwendungsfenster mit Menüs und einigen Button-Funktionen.
- * Klicken auf den Button "Hinzufügen". Mann kann hier einen neuen Buch-Objeckt
- * hinzufügen.(Funktion: Hinzufügen eines neues Buch-Objeckt) 
- * Klicken auf den Button "Ändern", der in der Liste stellt, kann man diesen Buch-Objecht ändern.
- * (Funktion: Ändern eines vorhandenen Buch-Objecht) Auswählen einen Buch-Objecht,der
+ * Anwendungsfenster mit MenÃ¼s und einigen Button-Funktionen.
+ * Klicken auf den Button "HinzufÃ¼gen". Mann kann hier einen neuen Buch-Objeckt
+ * hinzufÃ¼gen.(Funktion: HinzufÃ¼gen eines neues Buch-Objeckt) 
+ * Klicken auf den Button "Ã„ndern", der in der Liste stellt, kann man diesen Buch-Objecht Ã¤ndern.
+ * (Funktion: Ã„ndern eines vorhandenen Buch-Objecht) AuswÃ¤hlen einen Buch-Objecht,der
  * in der Liste stellt.
- * Danach klicken auf den Button"Löschen", kann man diesen
- * Buch-Objecht löschen. (Funktion: Entfernen eines vorhandenen Buch-Objecht)
+ * Danach klicken auf den Button"LÃ¶schen", kann man diesen
+ * Buch-Objecht lÃ¶schen. (Funktion: Entfernen eines vorhandenen Buch-Objecht)
  * Schreiben den ganzen Buch-Objecht und klicken auf den Button "Suchen", kann man
  * diesen Buch-Objecht suchen. Der gesuchte Buch-Objecht wird markiert.(Funktion:
  * Suchen eines Titels)
@@ -50,7 +50,7 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 	/**
 	 * Hier startet unsere Anwendung.
 	 * 
-	 * @param args Argumente der Befehlszeile, werden nicht benötigt.
+	 * @param args Argumente der Befehlszeile, werden nicht benÃ¶tigt.
 	 */
 	public static void main(String[] args) {
 		/**
@@ -68,23 +68,23 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 
 	private JTextField Identifikator = new JTextField(15);
     private JLabel lblIdentifikator = new JLabel("Identifikator");
-	// Button "Hinzufügen", "Ändern" und "Löschen"
-	private JButton Botten_Hinzufuegen = new JButton("  Hinzufügen  ");
-	private JButton Botten_Aendern = new JButton("      Ändern      ");
-	private JButton Botten_Loeschen = new JButton("     Löschen     ");
+	// Button "HinzufÃ¼gen", "Ã„ndern" und "LÃ¶schen"
+	private JButton Botten_Hinzufuegen = new JButton("  HinzufÃ¼gen  ");
+	private JButton Botten_Aendern = new JButton("      Ã„ndern      ");
+	private JButton Botten_Loeschen = new JButton("     LÃ¶schen     ");
 
 	// Button "Suchen" und "Schliessen" :
 	private JTextField Suchen = new JTextField("Buchtitel eingeben", 15); // 15 Spalten
 	private JButton Botten_Suchen = new JButton("Suchen");
 
-	private JButton Botten_Schliessen = new JButton("Schließen");
+	private JButton Botten_Schliessen = new JButton("SchlieÃŸen");
 	/**
-	 * Menüleiste für das Anwendungsfenster.
+	 * MenÃ¼leiste fÃ¼r das Anwendungsfenster.
 	 */
 	class MenuLeiste extends JMenuBar {
 
 		/**
-		 * Konstruktor initialisiert die Menüleiste.
+		 * Konstruktor initialisiert die MenÃ¼leiste.
 		 */
 		public MenuLeiste() {
 
@@ -92,41 +92,41 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 		}
 
 		/**
-		 * Menü "Datei".
+		 * MenÃ¼ "Datei".
 		 */
 		class DateiMenu extends JMenu {
 
 			/**
-			 * Konstruktor initialisiert das Menü.
+			 * Konstruktor initialisiert das MenÃ¼.
 			 */
 			public DateiMenu() {
 
 				super("Datei"); // Konstruktur der SuperKlasse wird angerufen.
 
-				add(new DateiOeffnenItem());// Hinzufügrn eine neue DateiOeffenItem;
+				add(new DateiOeffnenItem());// HinzufÃ¼grn eine neue DateiOeffenItem;
 				addSeparator();
-				add(new DateiSpeichernItem());// Hinzufügrn eine neue DateiSpeichernItem;
+				add(new DateiSpeichernItem());// HinzufÃ¼grn eine neue DateiSpeichernItem;
 			}
 			/**
-			 * Menüeintrag für "Datei Öffnen"
+			 * MenÃ¼eintrag fÃ¼r "Datei Ã–ffnen"
 			 */
 			class DateiOeffnenItem extends JMenuItem implements ActionListener {
 
 				/**
-				 * Konstruktor initialisiert den Menüeintrag.
+				 * Konstruktor initialisiert den MenÃ¼eintrag.
 				 */
 				public DateiOeffnenItem() {
-					super("Öffnen"); // Verbinden Öffnen-MenuItem mit MeunItem.
+					super("Ã–ffnen"); // Verbinden Ã–ffnen-MenuItem mit MeunItem.
 					addActionListener(this); // Reaktion auf Klicken
 				}
 				/**
 				 * Reagieren auf Klick.
 				 */
 				public void actionPerformed(ActionEvent e) {
-					// Standarddialog fc zum Auswählen einer Datei:
+					// Standarddialog fc zum AuswÃ¤hlen einer Datei:
 					JFileChooser fc = new JFileChooser();
 					//wenn der Dialog geschlossen wird .
-					//wird der Wert der Auswählen Datei in der Variable returnValue geschpeischert.  
+					//wird der Wert der AuswÃ¤hlen Datei in der Variable returnValue geschpeischert.  
 					int returnValue = fc.showOpenDialog(Buecher_Verwaltung_Frame.this);
 					if (returnValue == JFileChooser.OPEN_DIALOG) {
 						File file = fc.getSelectedFile();
@@ -144,11 +144,11 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 				}
 			}
 			/**
-			 * Menüeintrag für "Datei Speichern"
+			 * MenÃ¼eintrag fÃ¼r "Datei Speichern"
 			 */
 			class DateiSpeichernItem extends JMenuItem implements ActionListener {
 				/**
-				 * Konstruktor initialisiert den Menüeintrag.
+				 * Konstruktor initialisiert den MenÃ¼eintrag.
 				 */
 				public DateiSpeichernItem() {
 					super("Speichern unter");
@@ -158,7 +158,7 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 				 * Reagieren auf Klick.
 				 */
 				public void actionPerformed(ActionEvent e) {
-					// Standarddialog zum Auswählen einer Datei:
+					// Standarddialog zum AuswÃ¤hlen einer Datei:
 					JFileChooser fc = new JFileChooser();
 					int returnValue = fc.showSaveDialog(Buecher_Verwaltung_Frame.this);
 					if (returnValue == JFileChooser.APPROVE_OPTION) {
@@ -349,17 +349,17 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 
 	public Buecher_Verwaltung_Frame() {
 
-		// Reaktion beim Schließen des Fensters festlegen (statt WindowEventHandler):
+		// Reaktion beim SchlieÃŸen des Fensters festlegen (statt WindowEventHandler):
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		// Menüzeile installieren:
+		// MenÃ¼zeile installieren:
 		setJMenuBar(new MenuLeiste());
 		// add (guiListe);
 
-		// Buecherdatenliste in GUI-Liste übertragen:
+		// Buecherdatenliste in GUI-Liste Ã¼bertragen:
 		guiListe.setBuecher(buch);
 
-		// Layout setzen und GUI-Elemente hinzufügen:
+		// Layout setzen und GUI-Elemente hinzufÃ¼gen:
 		setLayout(new BorderLayout());
 		add(new SouthPanel(), BorderLayout.SOUTH);
 		add(guiListe, BorderLayout.CENTER);
@@ -381,19 +381,19 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 	}
 
 	/**
-	 * Klicken auf Button "Hinzufügen" auswerten:
+	 * Klicken auf Button "HinzufÃ¼gen" auswerten:
 	 */
 
 	public void actionPerformed(ActionEvent e) {
 
-		if (e.getActionCommand().equals("  Hinzufügen  ")) {
+		if (e.getActionCommand().equals("  HinzufÃ¼gen  ")) {
 			// Neues Buch-Objekt erzeugen:
 			Buch m = new Buch();
 			// Dialog zum Bearbeite des neuen Objekts zeigen:
 			BuchDialog dlg = new BuchDialog(this, m);
 
 			if (dlg.closedOK) {
-				// Neuen Buecher hinzufügen:
+				// Neuen Buecher hinzufÃ¼gen:
 				buch.addBuch(m);
 				// GUI-Elemente mit Daten aktualisieren:
 				updateGUI();
@@ -403,14 +403,14 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 		}
 
 		/**
-		 * Klicken auf Button "Ändern" auswerten:
+		 * Klicken auf Button "Ã„ndern" auswerten:
 		 */
-		else if (e.getActionCommand().equals("      Ändern      ")) {
-			// Buch-Objekt wählen:
+		else if (e.getActionCommand().equals("      Ã„ndern      ")) {
+			// Buch-Objekt wÃ¤hlen:
 			int[] items = guiListe.getSelectedIndices();
 			System.out.println(items.length);
 
-			// das auswählende Buch-Objekt ändern:
+			// das auswÃ¤hlende Buch-Objekt Ã¤ndern:
 			int i = items[0];
 			Buch m = buch.get(i);
 			BuchDialog dlg = new BuchDialog(this, m);
@@ -422,11 +422,11 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 		}
 
 		/**
-		 * Klicken auf Button "Löschen" auswerten:
+		 * Klicken auf Button "LÃ¶schen" auswerten:
 		 */
-		else if (e.getActionCommand().equals("     Löschen     ")) {
+		else if (e.getActionCommand().equals("     LÃ¶schen     ")) {
 
-			// Buch-Objekt wählen:
+			// Buch-Objekt wÃ¤hlen:
 			int[] items = guiListe.getSelectedIndices();
 			//Indexes in dem Array items speichern
 			
@@ -434,13 +434,13 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 			System.out.println(Arrays.toString(items));
 			int decrease = 0;
 
-			// JOptionPane ,um die warnung vor das löschen.
-			int result = JOptionPane.showConfirmDialog(null, "Sie werden Ihre Buch löschen.\nSind Sie sicher?",
-					"Buch löschen", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+			// JOptionPane ,um die warnung vor das lÃ¶schen.
+			int result = JOptionPane.showConfirmDialog(null, "Sie werden Ihre Buch lÃ¶schen.\nSind Sie sicher?",
+					"Buch lÃ¶schen", JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
 
 			switch (result) {
 			case JOptionPane.YES_OPTION:
-				// Mehre Buch-Objekt löschen:
+				// Mehre Buch-Objekt lÃ¶schen:
 				
 				for (int item : items) {
 					int x=item - decrease;
@@ -471,15 +471,15 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 
 			// erhalten die eingegebene Titel
 			// public String trim(), benuztet man diese Methode, wenn  man
-			// Leerzeichen am Anfang schreibt und am Ende keine Behinderung für Erhaltung des Titels
+			// Leerzeichen am Anfang schreibt und am Ende keine Behinderung fÃ¼r Erhaltung des Titels
 			String suchtext = Suchen.getText().trim();
 			// erhalten Anzahl der Buchtitel
 			int size = model.getSize();
 
-			// Die ganze Buchtitel prüfen einzeln.
+			// Die ganze Buchtitel prÃ¼fen einzeln.
 			for (int i = 0; i < size; i++) {
 				Object o = model.getElementAt(i);
-				// Hier kann man prüfen, ob es passende Buchtitel in guiListe gibt
+				// Hier kann man prÃ¼fen, ob es passende Buchtitel in guiListe gibt
 				if (o.equals(suchtext)) {
 					guiListe.setSelectedIndex(i);
 					return;
@@ -496,7 +496,7 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 		 */
 		else if (e.getSource() == Botten_Schliessen) {
 			// JOptionPane ,um die warnung vor das Fenster schliessen.
-			int result = JOptionPane.showConfirmDialog(null, "Programm jetzt schließen?", "Warnung",
+			int result = JOptionPane.showConfirmDialog(null, "Programm jetzt schlieÃŸen?", "Warnung",
 					JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
 
 			switch (result) {
@@ -514,10 +514,10 @@ public class Buecher_Verwaltung_Frame extends JFrame implements ActionListener {
 
 	void updateGUI() {
 
-		// Buecherdatenliste in GUI-Liste übertragen:
+		// Buecherdatenliste in GUI-Liste Ã¼bertragen:
 		guiListe.setBuecher(buch);
 
-		// Auswertung für Anzahl Buecher aktualisieren:
+		// Auswertung fÃ¼r Anzahl Buecher aktualisieren:
 
 		lblIdentifikator.setText("" + buch.size());
 	}
